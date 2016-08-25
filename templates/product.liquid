@@ -107,6 +107,7 @@
     <div class="product-description rte" itemprop="description">
       {{ product.description }}
        {% if product.type == 'Toner'%}
+      	{% include 'graphic-description' %}
         {% include 'product-table' %}
        {% endif %}
     </div>
