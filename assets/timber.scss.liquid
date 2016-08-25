@@ -2276,7 +2276,7 @@ $shareBorderColor: #ececec;
   .site-header & {
     display: none;
     margin-bottom: 0;
-
+    
     @include at-query ($min, $large) {
       display: inline-block;
     }
@@ -2433,6 +2433,13 @@ $shareBorderColor: #ececec;
 /*================ Large screen bar navigation ================*/
 @include at-query ($min, $large) {
   .nav-bar {
+    height: 30px;
+    li{
+      vertical-align: middle;
+    }
+    li a{
+      padding-top: 0;
+    }
     .search-bar {
       display: none;
     }
@@ -3255,6 +3262,10 @@ a.remove {
 
 #ajaxifyDrawer .ajaxifyCart--content a.remove {
   color: $colorTextBody;
+}
+
+.ajaxify-drawer.is-visible .ajaxifyCart--content {
+  padding-top: 2em;
 }
 
 @include at-query ($max, $small) {
@@ -4290,3 +4301,141 @@ img.mfp-img {
   }
 }
 
+
+
+///new header styles entered by wes///
+
+
+
+
+///////////top utility header////////////////
+
+.logo {
+  text-align: center;
+}
+
+.header-util{
+  position: absolute;
+  top: 0;
+  color: #FFF;
+  background-color: #484D49;
+  height: 30px;
+  padding: 0 1em;
+  box-shadow: 1px 1px 2px black;
+  span, li {
+    vertical-align: middle;
+  }
+}
+
+.header-util-left {
+  display: inline-block;
+  float: left;
+}
+
+.header-util-right {
+  display: inline-block;
+  float: right; 
+  ul {
+    margin: 0;
+  }
+  ul li{
+    display: inline-block;
+    margin: 0;
+    padding:0 1em;
+    vertical-align: middle;
+  }
+  ul li a{
+    text-decoration: none;
+    color: #fff;
+  }
+}
+
+ .header-util-right li:hover {
+    text-decoration: underline;
+    transition: 2s all ease;
+  }
+
+///// site header /////
+
+.logo {
+ @include at-query($max, $small){
+   span {
+     font-size: 120%;
+   }
+ }
+}
+
+
+///modified header message  wes///////
+
+.header-message-div {
+  	display: inline-block;
+	margin: 0;
+  @include at-query($max, $small){
+    font-size: 130%;   
+  }
+  img {
+    height: 34px;
+    width: 34px;
+    border-radius: 5px;
+    vertical-align: middle;   
+  }
+  ul {
+    margin-bottom: 0;
+  }
+  ul li{
+    margin: 0;
+    display: inline-block;
+    padding: 0 1em .5em 1em;
+    @include at-query($max, $small){
+      padding: 1em;
+    }
+  }
+  span {
+    vertical-align: middle;
+  }
+}
+
+
+.fb_iframe_widget{
+  display: block !important;
+  text-align: right !important;
+  width: 180px !important;
+  @include at-query($max, $small){
+     margin: 1em auto;
+    }
+}
+
+
+
+//// Create Account and Sign In
+
+.header-sign-in {
+  display: inline-block;
+  margin-bottom: 5px;
+  span {
+    vertical-align: middle;
+  }
+}
+
+.actual-search-bar {
+  	max-width: 80%;
+
+}
+
+
+.graphic-description {
+  margin-top: 1em;
+  text-align: center;
+  ul {
+    display: inline-block;
+    li{
+      list-style-type: none;
+      text-align: center;
+      img{
+        width: 80px;
+        height: 80px;
+      }
+    }
+  }
+}

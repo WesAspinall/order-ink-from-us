@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="24px" height="14px" viewBox="0 0 24 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>Mail Icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M0,1.58494848 C0,0.709605606 0.717983981,0 1.592654,0 L22.3977113,0 C23.2773098,0 23.9903653,0.711256446 23.9903653,1.58494848 L23.9903653,11.9999572 C23.9903653,12.8753001 23.2723813,13.5849057 22.3977113,13.5849057 L1.592654,13.5849057 C0.713055485,13.5849057 0,12.8736492 0,11.9999572 L0,1.58494848 Z M1.50725136,1.17939704 C0.914268446,0.767483067 1.02466911,0.440996143 1.73483529,0.449929051 L22.1110093,0.706233126 C22.8296833,0.715273051 22.9248361,1.0574493 22.3450457,1.45573141 L13.2606395,7.69618632 C12.6019898,8.14864005 11.5379066,8.14716444 10.8884455,7.69601807 L1.50725136,1.17939704 Z" id="path-1"></path>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="23.9903653" height="13.5849057" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="Order-Ink-From-Us" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Mail-Icon" stroke="#FFFFFF" stroke-width="1.15616218">
+            <use id="Combined-Shape" mask="url(#mask-2)" xlink:href="#path-1"></use>
+        </g>
+    </g>
+</svg>
