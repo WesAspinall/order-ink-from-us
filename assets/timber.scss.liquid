@@ -2364,7 +2364,7 @@ $shareBorderColor: #ececec;
 @include at-query ($max, $small) {
   .nav-bar {
     .show-nav & {
-      bottom: 0;
+      bottom: 10;
       top: $mobileNavBarHeight;
     }
   }
@@ -2433,12 +2433,11 @@ $shareBorderColor: #ececec;
 /*================ Large screen bar navigation ================*/
 @include at-query ($min, $large) {
   .nav-bar {
-    height: 30px;
     li{
       vertical-align: middle;
     }
     li a{
-      padding-top: 0;
+      padding:.5em;
     }
     .search-bar {
       display: none;
@@ -2449,7 +2448,6 @@ $shareBorderColor: #ececec;
     text-align: left;
     white-space: nowrap;
     margin-left: -$gutter/2;
-
     & > li {
       position: relative;
       display: inline-block;
@@ -2461,6 +2459,8 @@ $shareBorderColor: #ececec;
 
   }
 }
+
+
 
 /*================ Dropdowns ================*/
 .icon-arrow-down {
@@ -2554,9 +2554,11 @@ $shareBorderColor: #ececec;
   background-color: $colorNav;
 
   .display-table-cell {
-    padding: 0 $gutter/2;
+    padding: 0 $gutter/3;
   }
-
+  .middle-nav-mobile {
+  text-align: center;
+  }
   .cart-toggle {
     text-align: right;
   }
@@ -2567,6 +2569,10 @@ $shareBorderColor: #ececec;
     top: 0;
     left: 0;
     right: 0;
+     .middle-nav-mobile {
+    text-align: center;
+        color: white;
+    }
   }
 
   /*================ Medium-down mobile nav bar ================*/
@@ -2574,12 +2580,16 @@ $shareBorderColor: #ececec;
     display: table;
     height: $mobileNavBarHeight;
     z-index: 999999999; // one 9 higher than #ajaxifyModal
-
+  
     .show-nav & {
       position: fixed;
       left: 0;
       top: 0;
     }
+     .middle-nav-mobile {
+    text-align: center;
+        color: white;
+   }
   }
 }
 
@@ -4369,8 +4379,8 @@ img.mfp-img {
 ///modified header message  wes///////
 
 .header-message-div {
-  	display: inline-block;
-	margin: 0;
+    display: inline-block;
+  margin: 0;
   @include at-query($max, $small){
     font-size: 130%;   
   }
@@ -4419,7 +4429,7 @@ img.mfp-img {
 }
 
 .actual-search-bar {
-  	max-width: 80%;
+    max-width: 80%;
 
 }
 

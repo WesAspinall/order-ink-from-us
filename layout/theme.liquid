@@ -67,7 +67,7 @@
   js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-<div id="as-root"></div><script>(function(e,t,n){var r,i=e.getElementsByTagName(t)[0];if(e.getElementById(n))return;r=e.createElement(t);r.id=n;r.src="//button.aftership.com/all.js";i.parentNode.insertBefore(r,i)})(document,"script","aftership-jssdk")</script>	
+<div id="as-root"></div><script>(function(e,t,n){var r,i=e.getElementsByTagName(t)[0];if(e.getElementById(n))return;r=e.createElement(t);r.id=n;r.src="//button.aftership.com/all.js";i.parentNode.insertBefore(r,i)})(document,"script","aftership-jssdk")</script>  
   {% include 'header-utility' %}
   
   
@@ -82,7 +82,7 @@
           {% endif %}
             {% if settings.logo_use_image %}
               <a href="/" itemprop="url">
-                <img src="{{ 'logo.png' | asset_url }}" alt="{{ shop.name }}" itemprop="logo">
+                <img src="{{ 'order-ink-circle-logo_1x.png' | asset_url }}" alt="{{ shop.name }}" itemprop="logo">
               </a>
             {% else %}
               <a href="/" itemprop="url">{{ shop.name }}</a>
@@ -92,7 +92,6 @@
           {% else %}
             </div>
           {% endif %}
-             <span>{{settings.header_message_1}}</span>
         </div>
 
         <div class="grid-item text-center large--text-right wes">
@@ -100,12 +99,12 @@
             <div class="header-message-div site-header--text-links large--text-right{% if settings.header_message_2 == blank %} medium-down--hide{% endif %}">
               
               {% if settings.header_message_2 != blank %}
-				{% include 'header-message' %}		              
+        {% include 'header-message' %}                  
               {% endif %}
               
-         		<div class="header-sign-in">
+            <div class="header-sign-in">
                 {% include 'fb-like-button' %}
-              	{% if shop.customer_accounts_enabled %}
+                {% if shop.customer_accounts_enabled %}
                   <span class="site-header--meta-links">
                     {% if customer %}
                       {% capture first_name %}<a href="/account">{{ customer.first_name }}</a>{% endcapture %}
@@ -117,10 +116,10 @@
                       <span>{{ 'layout.customer.create_account' | t | customer_register_link }}</span>
                       {% endif %}
                     {% endif %}            
-              	  </span>
-              	</div>
+                  </span>
+                </div>
               {% endif %}
-          	</div>
+            </div>
           
             <br class="medium-down--hide">
           {% endif %}
@@ -147,6 +146,9 @@
   <div id="mobileNavBar">
     <div class="display-table-cell">
       <a class="menu-toggle mobileNavBar-link"><span class="icon icon-hamburger"></span>{{ 'layout.navigation.mobile_menu' | t }}</a>
+    </div>
+    <div class="middle-nav-mobile display-table-cell">
+        {{settings.header_message_1}}
     </div>
     <div class="display-table-cell">
       <a href="/cart" class="cart-toggle mobileNavBar-link">
@@ -361,4 +363,4 @@
 {% endif %}
 
 </body>
-</html>
+</html>s
