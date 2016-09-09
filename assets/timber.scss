@@ -79,9 +79,9 @@ $breakpoint-has-pull:  ('medium', 'medium-down', 'large');
 ==============================================================================*/
 
 // Supply Theme Colors
-$colorPrimary: {{ settings.color_primary }};
-$colorSecondary: {{ settings.color_secondary }};
-$colorAccent: {{ settings.color_accent }};
+$colorPrimary: #204a80;
+$colorSecondary: #dcdcdc;
+$colorAccent: #ffea00;
 
 // Button colors
 $colorBtnPrimary: $colorPrimary;
@@ -97,28 +97,28 @@ $colorLink: $colorPrimary;
 $colorLinkHover: lighten($colorPrimary, 15%);
 
 // General colors
-$colorBody: {{ settings.color_body_bg }};
-$colorTextBody: {{ settings.color_body_text }};
-$colorHeaders: {{ settings.color_heading_text }};
+$colorBody: #ffffff;
+$colorTextBody: #585858;
+$colorHeaders: #000;
 
 // Border colors
-$colorBorder: {{ settings.color_borders }};
+$colorBorder: #ececec;
 
 // Site Header
-$headerBackground: {{ settings.color_header_background }};
-$headerText: {{ settings.color_header_text }};
-$headerButtonAndSearch: {{ settings.color_header_cart_search }};
+$headerBackground: #ffffff;
+$headerText: #004fac;
+$headerButtonAndSearch: #ffffff;
 
 // Nav background
-$colorNav: {{ settings.color_nav_bg }};
-$colorNavText: {{ settings.color_nav_text }};
+$colorNav: #484d49;
+$colorNavText: #fff;
 
 // Mobile Nav Bar
 $mobileNavBarHeight: 50px;
 
 // Site Footer
-$colorFooterBg: {{ settings.color_footer_bg }};
-$colorFooterText: {{ settings.color_footer_text }};
+$colorFooterBg: #f2f2f2;
+$colorFooterText: #636363;
 
 // Helper colors
 $disabledGrey: #f6f6f6;
@@ -144,54 +144,32 @@ $passwordPageUseBgImage: true;
 /*============================================================================
   Get font-families from theme settings
 ==============================================================================*/
-{% if settings.type_base_family contains 'Google' %}
-  {% assign type_base_parts = settings.type_base_family | split: '_' %}
-  {% assign type_base_name = type_base_parts[1] %}
-  {% capture base_family %}"{{ type_base_name | split: ':' | first | replace: '+', ' ' }}"{% if type_base_parts.last == 'serif' %}, serif {% else %}, "HelveticaNeue", "Helvetica Neue", sans-serif{% endif %}{% endcapture %}
-{% else %}
-  {% assign base_family = settings.type_base_family %}
-{% endif %}
 
-{% if settings.type_header_family contains 'Google' %}
-  {% assign type_header_parts = settings.type_header_family | split: '_' %}
-  {% assign type_header_name = type_header_parts[1] %}
-  {% capture header_family %}"{{ type_header_name | split: ':' | first | replace: '+', ' ' }}"{% if type_header_parts.last == 'serif' %}, serif {% else %}, "HelveticaNeue", "Helvetica Neue", sans-serif{% endif %}{% endcapture %}
-  {% assign header_weight = type_header_parts[2] %}
-{% else %}
-  {% assign header_family = settings.type_header_family %}
-  {% assign header_weight = 700 %}
-{% endif %}
 
-{% if settings.type_accent_family contains 'Google' %}
-  {% assign type_accent_parts = settings.type_accent_family | split: '_' %}
-  {% assign type_accent_name = type_accent_parts[1] %}
-  {% capture accent_family %}"{{ type_accent_name | split: ':' | first | replace: '+', ' ' }}"{% if type_accent_parts.last == 'serif' %}, serif {% else %}, "HelveticaNeue", "Helvetica Neue", sans-serif{% endif %}{% endcapture %}
-  {% assign accent_weight = type_accent_parts[2] %}
-{% else %}
-  {% assign accent_family = settings.type_accent_family %}
-  {% assign accent_weight = 500 %}
-{% endif %}
+
+
+
 
 // Header Font
-$headerFontStack: {{ header_family }};
-$headerFontWeight: {{ header_weight }};
+$headerFontStack: "Lato", "HelveticaNeue", "Helvetica Neue", sans-serif;
+$headerFontWeight: 400;
 
 // Body Font
-$bodyFontStack: {{ base_family }};
-$baseFontSize: {{ settings.type_base_size }};
+$bodyFontStack: "Lato", "HelveticaNeue", "Helvetica Neue", sans-serif;
+$baseFontSize: 15px;
 
 // Navigation and Button Font
-$accentFontStackBold: {{ accent_family }};
-$accentFontWeight: {{ accent_weight }};
+$accentFontStackBold: "Lato", "HelveticaNeue", "Helvetica Neue", sans-serif;
+$accentFontWeight: 700;
 
 // Icons
 @font-face {
   font-family: "icons";
-  src: url('{{ 'icons.eot' | asset_url }}');
-  src: url('{{ 'icons.eot' | asset_url }}#iefix') format("embedded-opentype"),
-       url('{{ 'icons.woff' | asset_url }}') format("woff"),
-       url('{{ 'icons.ttf' | asset_url }}') format("truetype"),
-       url('{{ 'icons.svg' | asset_url }}#timber-icons') format("svg");
+  src: url('//cdn.shopify.com/s/files/1/1172/2464/t/3/assets/icons.eot?13405143638614626346');
+  src: url('//cdn.shopify.com/s/files/1/1172/2464/t/3/assets/icons.eot?13405143638614626346#iefix') format("embedded-opentype"),
+       url('//cdn.shopify.com/s/files/1/1172/2464/t/3/assets/icons.woff?13405143638614626346') format("woff"),
+       url('//cdn.shopify.com/s/files/1/1172/2464/t/3/assets/icons.ttf?13405143638614626346') format("truetype"),
+       url('//cdn.shopify.com/s/files/1/1172/2464/t/3/assets/icons.svg?13405143638614626346#timber-icons') format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -740,10 +718,10 @@ html, body {
   Simply upload a file called 'bg.jpg' and delete lines as necessary.
 ==============================================================================*/
 // body {
-  // background: url({{ 'bg.jpg' | asset_url }}) 0 0 repeat scroll;
-  // background: url({{ 'bg.jpg' | asset_url }}) 0 0 no-repeat scroll;
-  // background: url({{ 'bg.jpg' | asset_url }}) 0 0 repeat fixed;
-  // background: url({{ 'bg.jpg' | asset_url }}) 0 0 no-repeat fixed;
+  // background: url(//cdn.shopify.com/s/files/1/1172/2464/t/3/assets/bg.jpg?13405143638614626346) 0 0 repeat scroll;
+  // background: url(//cdn.shopify.com/s/files/1/1172/2464/t/3/assets/bg.jpg?13405143638614626346) 0 0 no-repeat scroll;
+  // background: url(//cdn.shopify.com/s/files/1/1172/2464/t/3/assets/bg.jpg?13405143638614626346) 0 0 repeat fixed;
+  // background: url(//cdn.shopify.com/s/files/1/1172/2464/t/3/assets/bg.jpg?13405143638614626346) 0 0 no-repeat fixed;
 
   // Fullscreen background
   // @include prefix('background-size', 'cover');
@@ -846,9 +824,9 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.4;
   font-family: $headerFontStack;
   font-weight: $headerFontWeight;
-  {% if settings.type_header_transform %}
+  
   text-transform: uppercase;
-  {% endif %}
+  
 
   a {
     text-decoration: none;
@@ -1201,16 +1179,16 @@ html input[disabled] {
   font: {
     family: $accentFontStackBold;
     weight: $accentFontWeight;
-    size: {{ settings.type_button_size }};
+    size: 17px;
   };
-  {% if settings.type_button_transform %}
+  
   text-transform: uppercase;
-  {% endif %}
+  
   @include transition(background-color 0.2s ease-out);
 
   &.btn--small {
     padding: 8px 12px 7px;
-    font-size: {{ settings.type_button_size }} - 2;
+    font-size: 17px - 2;
   }
 
   &.btn--full {
@@ -1493,7 +1471,7 @@ select {
           appearance: none;
   background-position: right center;
   background: {
-    image: url('{{ 'arrow-down.svg' | asset_url }}');
+    image: url('//cdn.shopify.com/s/files/1/1172/2464/t/3/assets/arrow-down.svg?13405143638614626346');
     repeat: no-repeat;
     position: right 10px center;
     color: transparent;
@@ -1755,7 +1733,7 @@ label.error {
 
   li {
     margin: 0 $gutter/4 $gutter/4;
-    color: {{ settings.color_footer_social_link }};
+    color: #bbbbbb;
     cursor: default;
   }
 
@@ -1783,11 +1761,11 @@ label.error {
   }
 
   a {
-    color: {{ settings.color_footer_social_link }};
+    color: #bbbbbb;
     @include transition(color 0.2s ease-out);
 
     &:hover {
-      color: darken({{ settings.color_footer_social_link }}, 15%);
+      color: darken(#bbbbbb, 15%);
       @include transition(color 0.05s ease-in);
     }
   }
@@ -2129,7 +2107,7 @@ $shareBorderColor: #ececec;
 
 .header-logo {
   margin: $gutter auto;
-  max-width: {{ settings.logo_max_width }}px;
+  max-width: 250px;
 
   @include at-query ($min, $large) {
     margin: 15px 0;
@@ -2246,7 +2224,7 @@ $shareBorderColor: #ececec;
     font: {
       family: $accentFontStackBold;
       weight: $accentFontWeight;
-      size: {{ settings.type_button_size }};
+      size: 17px;
     };
     line-height: 24px!important;
   }
@@ -2333,11 +2311,11 @@ $shareBorderColor: #ececec;
   font: {
     family: $accentFontStackBold;
     weight: $accentFontWeight;
-    size: {{ settings.type_navigation_size }};
+    size: 18px;
   };
-  {% if settings.type_navigation_transform %}
+  
   text-transform: uppercase;
-  {% endif %}
+  
   cursor: default;
 
   li {
@@ -4069,7 +4047,7 @@ img.mfp-img {
 
 .spr-badge-starrating,
 .spr-icon {
-  color: {{ settings.product_reviews_star_color }};
+  color: #e5c649;
   font-size: inherit;
 }
 
@@ -4103,7 +4081,7 @@ img.mfp-img {
   width: 100%;
 
   @if $passwordPageUseBgImage {
-    background-image: url({{ 'password-page-background.jpg' | asset_url }});
+    background-image: url(//cdn.shopify.com/s/files/1/1172/2464/t/3/assets/password-page-background.jpg?13405143638614626346);
     background-size: cover;
     background-repeat: no-repeat;
     color: #ffffff;
@@ -4134,7 +4112,7 @@ img.mfp-img {
   margin-top: 3 * $gutter;
 
   .logo {
-    width: {{ settings.logo_max_width }}px;
+    width: 250px;
     max-width: 100%;
   }
 }

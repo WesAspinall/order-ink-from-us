@@ -39,13 +39,17 @@
       <td>Cost per Page</td>
       <td>
 
-     <!--    Assigning variables --> 
+       <!--    Assigning variables --> 
         {%assign price = product.price | money_without_currency %}
   
         {% assign costPerPage = price | divided_by: pageYield%}
     
         {% if pageYield != 0 %}
+        
           {{costPerPage | round: 2| append: '&cent'}}
+        
+        {% elsif pageYield < 0.01 %}
+          less than {{ 0.01 | append: '&cent' }}
         {% else %}
           N/A
         {% endif %}
